@@ -13,7 +13,491 @@ body{font-family:'DM Sans',sans-serif;background:var(--paper);color:var(--ink);m
 .eyebrow{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.12em;color:var(--accent);text-transform:uppercase;margin-bottom:12px}
 .h-title{font-family:'Playfair Display',serif;font-size:clamp(36px,5vw,64px);font-weight:900;line-height:1;letter-spacing:-0.02em}
 .h-title span{color:var(--accent)}
+.h-sub{font-size:15px;color:var(--ink-<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Workshop Victoria Teams</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#0e0d0b;--ink-2:#3a3830;--ink-3:#7a7568;--paper:#f5f2eb;--paper-2:#ede9e0;--accent:#c8522a;--gold:#b89a4a;--green:#2e5e3a;--border:rgba(14,13,11,.1);--border-s:rgba(14,13,11,.2)}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'DM Sans',sans-serif;background:var(--paper);color:var(--ink)}
+.header{padding:48px 48px 32px;display:grid;grid-template-columns:1fr auto;gap:32px;border-bottom:1px solid var(--border-s);margin-bottom:48px}
+.eyebrow{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.12em;color:var(--accent);text-transform:uppercase;margin-bottom:12px}
+.h-title{font-family:'Playfair Display',serif;font-size:clamp(36px,5vw,64px);font-weight:900;line-height:1;letter-spacing:-.02em}
+.h-title span{color:var(--accent)}
 .h-sub{font-size:15px;color:var(--ink-3);margin-top:12px;font-weight:300;line-height:1.6}
+.meta-r{text-align:right}
+.meta-date{font-family:'Playfair Display',serif;font-size:20px;font-weight:700}
+.meta-loc{font-size:12px;color:var(--ink-3);margin-top:4px;font-family:'DM Mono',monospace}
+.chips{display:flex;gap:6px;justify-content:flex-end;margin-top:12px}
+.chip{font-size:11px;padding:4px 10px;border-radius:99px;background:var(--ink);color:var(--paper);font-weight:500}
+.prog{padding:0 48px;margin-bottom:40px}
+.prog-head{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:8px}
+.prog-lbl{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.08em;color:var(--ink-3);text-transform:uppercase}
+.prog-pct{font-family:'Playfair Display',serif;font-size:28px;font-weight:700;color:var(--accent)}
+.prog-track{height:3px;background:var(--border-s);border-radius:2px;overflow:hidden}
+.prog-fill{height:100%;background:var(--accent);border-radius:2px;transition:width .6s}
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:12px;overflow:hidden;margin:0 48px 48px}
+.kpi{background:var(--paper);padding:20px 24px}
+.kpi-n{font-family:'Playfair Display',serif;font-size:32px;font-weight:900;line-height:1}
+.kpi-n.ac{color:var(--accent)}
+.kpi-l{font-size:11px;color:var(--ink-3);margin-top:4px;font-family:'DM Mono',monospace;letter-spacing:.06em;text-transform:uppercase}
+.main{padding:0 48px 60px;display:flex;flex-direction:column;gap:2px}
+.divider{display:flex;align-items:center;gap:16px;margin:20px 0 8px}
+.div-lbl{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3);white-space:nowrap}
+.div-line{flex:1;height:1px;background:var(--border)}
+.block{border:1px solid var(--border);border-radius:12px;overflow:hidden;background:var(--paper)}
+.block:hover{box-shadow:0 4px 24px rgba(14,13,11,.08)}
+.btrig{display:grid;grid-template-columns:100px 4px 1fr auto;align-items:stretch;cursor:pointer;min-height:72px;user-select:none}
+.btime{padding:20px 16px 20px 20px;display:flex;align-items:center;border-right:1px solid var(--border);font-family:'DM Mono',monospace;font-size:11px;color:var(--ink-3);line-height:1.6}
+.bbar{width:4px;flex-shrink:0}
+.bcont{padding:20px 24px;display:flex;flex-direction:column;justify-content:center}
+.bphase{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;margin-bottom:4px}
+.btitle{font-family:'Playfair Display',serif;font-size:18px;font-weight:700;line-height:1.2}
+.bsub{font-size:12px;color:var(--ink-3);margin-top:3px;font-weight:300}
+.bright{padding:20px;display:flex;align-items:center;gap:12px}
+.btag{font-size:11px;padding:4px 12px;border-radius:99px;font-weight:500;border:1px solid;white-space:nowrap}
+.chev{width:16px;height:16px;color:var(--ink-3);transition:transform .25s;flex-shrink:0}
+.chev.open{transform:rotate(90deg)}
+.bbody{display:none;border-top:1px solid var(--border);padding:28px 28px 28px 124px}
+.bbody.open{display:block}
+.bgrid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.sec-t{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);margin-bottom:12px;padding-bottom:6px;border-bottom:1px solid var(--border)}
+.olist{list-style:none}
+.oitem{display:flex;gap:10px;align-items:flex-start;padding:6px 0;font-size:13px;color:var(--ink-2);line-height:1.5;border-bottom:1px solid var(--border)}
+.oitem:last-child{border-bottom:none}
+.odot{width:5px;height:5px;border-radius:50%;flex-shrink:0;margin-top:7px}
+.dlist{list-style:none}
+.ditem{display:flex;gap:12px;align-items:flex-start;padding:10px 0;font-size:13px;color:var(--ink-2);line-height:1.5;border-bottom:1px solid var(--border);cursor:pointer}
+.ditem:last-child{border-bottom:none}
+.ditem:hover{opacity:.8}
+.dcheck{width:22px;height:22px;border-radius:6px;border:1.5px solid var(--border-s);flex-shrink:0;display:flex;align-items:center;justify-content:center;transition:all .15s}
+.dcheck.done{background:var(--accent);border-color:var(--accent)}
+.dcheck.done::after{content:'';display:block;width:6px;height:10px;border:2px solid white;border-top:none;border-left:none;transform:rotate(45deg) translate(-1px,-1px)}
+.dtext{flex:1}
+.dtext.done{text-decoration:line-through;color:var(--ink-3)}
+.outbox{border-radius:8px;padding:14px 16px;margin-top:16px;border:1px solid}
+.outlbl{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;margin-bottom:8px}
+.outitem{font-size:13px;padding:3px 0;line-height:1.5}
+.notes{width:100%;background:rgba(255,255,255,.5);border:1px solid var(--border-s);border-radius:8px;padding:12px 14px;font-family:'DM Sans',sans-serif;font-size:13px;color:var(--ink);resize:vertical;min-height:80px;outline:none;margin-top:12px;transition:border-color .2s}
+.notes:focus{border-color:var(--accent)}
+.notes::placeholder{color:var(--ink-3)}
+.bdi-pill{display:inline-flex;align-items:center;gap:6px;font-size:11px;padding:3px 10px;border-radius:99px;background:#fce9e2;color:var(--accent);border:1px solid #f0c4b4;font-weight:500;margin-bottom:8px;font-family:'DM Mono',monospace}
+.ts .bbar,.ts .odot{background:#BA7517}.ts .bphase,.ts .btag{color:#BA7517}.ts .btag{background:#faeeda;border-color:#BA7517}
+.td .bbar,.td .odot{background:#2a4a6e}.td .bphase,.td .btag{color:#2a4a6e}.td .btag{background:#d6e2f0;border-color:#2a4a6e}
+.tb .bbar,.tb .odot{background:#c8522a}.tb .bphase,.tb .btag{color:#c8522a}.tb .btag{background:#fce9e2;border-color:#c8522a}
+.tc .bbar,.tc .odot{background:#2e5e3a}.tc .bphase,.tc .btag{color:#2e5e3a}.tc .btag{background:#d4e8d9;border-color:#2e5e3a}
+.tk .bbar,.tk .odot{background:#4a3570}.tk .bphase,.tk .btag{color:#4a3570}.tk .btag{background:#e0d8f0;border-color:#4a3570}
+.tp .bbar,.tp .odot{background:#7a7568}.tp .bphase,.tp .btag{color:#7a7568}.tp .btag{background:#ede9e0;border-color:#7a7568}
+.estr{margin:0 48px 48px;border:1px solid var(--border-s);border-radius:12px;overflow:hidden}
+.estr-head{background:var(--ink);padding:24px 28px;display:flex;justify-content:space-between;align-items:center}
+.estr-title{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:var(--paper)}
+.estr-badge{font-family:'DM Mono',monospace;font-size:10px;padding:5px 12px;border-radius:99px;border:1px solid rgba(245,242,235,.3);color:rgba(245,242,235,.6)}
+.estr-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border)}
+.estr-card{background:var(--paper);padding:20px 24px}
+.estr-n{font-family:'Playfair Display',serif;font-size:40px;font-weight:900;color:var(--border-s);line-height:1;margin-bottom:4px}
+.estr-t{font-size:14px;font-weight:500;margin-bottom:6px}
+.estr-st{display:inline-flex;align-items:center;gap:5px;margin-top:10px;font-size:11px;font-family:'DM Mono',monospace;color:var(--ink-3);cursor:pointer;padding:3px 10px;border-radius:99px;border:1px solid var(--border-s);transition:all .15s}
+.estr-st:hover{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.estr-st.def{background:var(--green);color:white;border-color:var(--green)}
+.estr-st.proc{background:var(--gold);color:white;border-color:var(--gold)}
+.modo{margin:0 48px 48px}
+.modo-title{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;margin-bottom:4px}
+.modo-sub{font-size:13px;color:var(--ink-3);margin-bottom:20px;font-weight:300}
+.modo-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.modo-card{border:1px solid var(--border);border-radius:10px;padding:18px 20px;background:var(--paper)}
+.modo-icon{font-size:20px;margin-bottom:10px}
+.modo-ct{font-size:14px;font-weight:500;margin-bottom:4px}
+.modo-cb{font-size:12px;color:var(--ink-3);line-height:1.6;font-weight:300}
+.modo-in{width:100%;background:transparent;border:none;border-bottom:1px solid var(--border-s);padding:6px 0;font-family:'DM Sans',sans-serif;font-size:13px;color:var(--ink);outline:none;margin-top:8px}
+.modo-in::placeholder{color:var(--ink-3);font-style:italic}
+.acta-wrap{margin:0 48px 48px}
+.acta-btn{width:100%;background:var(--ink);color:var(--paper);border:none;border-radius:12px;padding:22px;font-family:'Playfair Display',serif;font-size:22px;font-weight:700;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:6px}
+.acta-btn:hover{opacity:.85}
+.acta-hint{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:rgba(245,242,235,.45);font-weight:400}
+.modal-bg{display:none;position:fixed;inset:0;background:rgba(14,13,11,.75);z-index:5000;align-items:center;justify-content:center;padding:24px}
+.modal-bg.show{display:flex}
+.modal{background:var(--paper);border-radius:16px;width:100%;max-width:720px;max-height:88vh;overflow-y:auto}
+.modal-head{padding:28px 32px 20px;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;background:var(--paper)}
+.modal-title{font-family:'Playfair Display',serif;font-size:24px;font-weight:700}
+.modal-x{background:none;border:none;cursor:pointer;font-size:28px;color:var(--ink-3)}
+.modal-body{padding:24px 32px}
+.acta-txt{font-family:'DM Mono',monospace;font-size:12px;line-height:1.9;color:var(--ink-2);white-space:pre-wrap;background:var(--paper-2);border-radius:8px;padding:20px;border:1px solid var(--border)}
+.modal-foot{display:flex;gap:12px;padding:20px 32px 28px;border-top:1px solid var(--border)}
+.btn-p{flex:1;background:var(--accent);color:white;border:none;border-radius:8px;padding:14px;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:500;cursor:pointer}
+.btn-p:hover{opacity:.85}
+.btn-p.ok{background:var(--green)}
+.btn-s{flex:1;background:transparent;color:var(--ink);border:1px solid var(--border-s);border-radius:8px;padding:14px;font-family:'DM Sans',sans-serif;font-size:14px;cursor:pointer}
+.footer{padding:32px 48px;border-top:1px solid var(--border);display:flex;justify-content:space-between}
+.footer-brand{font-family:'Playfair Display',serif;font-size:16px;font-weight:700;color:var(--ink-3)}
+.footer-note{font-family:'DM Mono',monospace;font-size:10px;color:var(--ink-3)}
+@keyframes fu{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+.block{animation:fu .4s ease both}
+@media(max-width:768px){.header,.kpis,.prog,.main,.footer,.estr,.modo,.acta-wrap{padding-left:24px;padding-right:24px}.header{grid-template-columns:1fr;padding-top:28px}.chips{justify-content:flex-start}.meta-r{text-align:left}.kpis{grid-template-columns:repeat(2,1fr)}.bgrid,.estr-grid,.modo-grid{grid-template-columns:1fr}.bbody{padding-left:24px}}
+</style>
+</head>
+<body>
+
+<div class="modal-bg" id="modal">
+  <div class="modal">
+    <div class="modal-head"><div class="modal-title">Acta del Workshop</div><button class="modal-x" id="mx">&#215;</button></div>
+    <div class="modal-body"><div class="acta-txt" id="atxt"></div></div>
+    <div class="modal-foot"><button class="btn-p" id="cbtn">Copiar acta</button><button class="btn-s" id="mx2">Cerrar</button></div>
+  </div>
+</div>
+
+<header class="header">
+  <div>
+    <div class="eyebrow">Workshop Directivo &middot; Victoria Teams</div>
+    <h1 class="h-title">Planeaci&oacute;n<br><span>Estrat&eacute;gica</span><br>2026</h1>
+    <p class="h-sub">Estrategia anual y modo de trabajo<br>Katherine Silva &middot; Julio Ortiz</p>
+  </div>
+  <div class="meta-r">
+    <div class="meta-date">Martes 17<br>de Marzo</div>
+    <div class="meta-loc">KAPITAL &middot; 09:00&ndash;18:00</div>
+    <div class="chips"><span class="chip">Katherine</span><span class="chip">Julio</span></div>
+  </div>
+</header>
+
+<div class="prog">
+  <div class="prog-head"><span class="prog-lbl">Decisiones tomadas en el d&iacute;a</span><span class="prog-pct" id="ppct">0%</span></div>
+  <div class="prog-track"><div class="prog-fill" id="pfill" style="width:0%"></div></div>
+</div>
+
+<div class="kpis">
+  <div class="kpi"><div class="kpi-n">8h</div><div class="kpi-l">Duraci&oacute;n</div></div>
+  <div class="kpi"><div class="kpi-n">4</div><div class="kpi-l">Bloques</div></div>
+  <div class="kpi"><div class="kpi-n">5</div><div class="kpi-l">Entregables</div></div>
+  <div class="kpi"><div class="kpi-n ac" id="kdec">0</div><div class="kpi-l">Decisiones</div></div>
+</div>
+
+<div class="main">
+  <div class="divider"><span class="div-lbl">Ma&ntilde;ana</span><div class="div-line"></div></div>
+
+  <div class="block ts">
+    <div class="btrig" id="bt0">
+      <div class="btime">09:00<br>&#8595;<br>10:00</div><div class="bbar"></div>
+      <div class="bcont"><div class="bphase">Apertura</div><div class="btitle">Regreso Valen &middot; Status Victoria Teams</div><div class="bsub">Reincorporaci&oacute;n &middot; pulso del equipo &middot; contexto</div></div>
+      <div class="bright"><span class="btag">Equipo</span><svg class="chev" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 4l4 4-4 4"/></svg></div>
+    </div>
+    <div class="bbody" id="bb0">
+      <div class="bgrid">
+        <div><div class="sec-t">Objetivos</div><ul class="olist">
+          <li class="oitem"><div class="odot"></div>Bienvenida a Valen y actualizaci&oacute;n del equipo</li>
+          <li class="oitem"><div class="odot"></div>Revisar estado de operaciones y pendientes</li>
+          <li class="oitem"><div class="odot"></div>Introducir el contexto del workshop</li>
+        </ul></div>
+        <div><div class="sec-t">Notas</div><textarea class="notes" data-k="n0" placeholder="Escribe aqu&iacute;..."></textarea></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="block td">
+    <div class="btrig" id="bt1">
+      <div class="btime">10:00<br>&#8595;<br>12:30</div><div class="bbar"></div>
+      <div class="bcont"><div class="bphase">Bloque 1 &middot; Diagn&oacute;stico</div><div class="btitle">Estrategia Anual &middot; D&oacute;nde est&aacute; Victoria Teams</div><div class="bsub">Estado actual &middot; BDI &middot; sistemas &middot; roles</div></div>
+      <div class="bright"><span class="btag">Diagn&oacute;stico</span><svg class="chev" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 4l4 4-4 4"/></svg></div>
+    </div>
+    <div class="bbody" id="bb1">
+      <div class="bgrid">
+        <div><div class="sec-t">Objetivos</div><ul class="olist">
+          <li class="oitem"><div class="odot"></div>Revisar contrato BDI: entregables, fees, fechas</li>
+          <li class="oitem"><div class="odot"></div>Mapear fortalezas y brechas operativas</li>
+          <li class="oitem"><div class="odot"></div>Definir sistemas internos que faltan para abril</li>
+          <li class="oitem"><div class="odot"></div>Asignar responsables por &aacute;rea de servicio BDI</li>
+        </ul></div>
+        <div><div class="sec-t">Decisiones a tomar</div><ul class="dlist">
+          <li class="ditem" data-k="d11"><div class="dcheck"></div><span class="dtext">&iquest;Qui&eacute;n es el responsable de tracking BDI?</span></li>
+          <li class="ditem" data-k="d12"><div class="dcheck"></div><span class="dtext">&iquest;Herramienta de seguimiento? (Notion, Sheets&hellip;)</span></li>
+          <li class="ditem" data-k="d13"><div class="dcheck"></div><span class="dtext">&iquest;C&oacute;mo se documenta la evidencia para el invoice?</span></li>
+          <li class="ditem" data-k="d14"><div class="dcheck"></div><span class="dtext">&iquest;3 objetivos estrat&eacute;gicos de VT para 2026?</span></li>
+        </ul></div>
+      </div>
+      <div class="outbox" style="background:#d6e2f0;color:#0c2a4a;border-color:#a8c4e0">
+        <div class="outlbl" style="color:#2a4a6e">Outputs</div>
+        <div class="outitem">&#128203; Mapa de responsables internos BDI</div>
+        <div class="outitem">&#128203; Brechas a cerrar antes del 1 de abril</div>
+        <div class="outitem">&#128203; 3 objetivos estrat&eacute;gicos acordados</div>
+      </div>
+      <textarea class="notes" data-k="n1" placeholder="Notas del diagn&oacute;stico..."></textarea>
+    </div>
+  </div>
+
+  <div class="block tp">
+    <div class="btrig" id="bt2">
+      <div class="btime">12:30<br>&#8595;<br>13:30</div><div class="bbar"></div>
+      <div class="bcont"><div class="bphase">Pausa obligatoria</div><div class="btitle">Almuerzo &middot; fuera del workspace</div><div class="bsub">Sin laptops &middot; energ&iacute;a para la tarde</div></div>
+      <div class="bright"><span class="btag">Pausa</span><svg class="chev" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 4l4 4-4 4"/></svg></div>
+    </div>
+    <div class="bbody" id="bb2">
+      <ul class="olist">
+        <li class="oitem"><div class="odot"></div>Salir del espacio f&iacute;sico del workshop</li>
+        <li class="oitem"><div class="odot"></div>Sin tel&eacute;fono en la mesa</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="divider"><span class="div-lbl">Tarde</span><div class="div-line"></div></div>
+
+  <div class="block tb">
+    <div class="btrig" id="bt3">
+      <div class="btime">13:30<br>&#8595;<br>15:00</div><div class="bbar"></div>
+      <div class="bcont"><div class="bphase">Bloque 2 &middot; BDI</div><div class="btitle">Propuesta Prop&oacute;sito de Marca &middot; BDI</div><div class="bsub">Prep interna 30 min + Reuni&oacute;n BDI 1h</div></div>
+      <div class="bright"><span class="btag">Cliente</span><svg class="chev" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 4l4 4-4 4"/></svg></div>
+    </div>
+    <div class="bbody" id="bb3">
+      <div class="bdi-pill">&#9679; Primer entregable bajo el nuevo contrato</div>
+      <div class="bgrid">
+        <div>
+          <div class="sec-t">13:30&ndash;14:00 &middot; Prep interna</div>
+          <ul class="olist">
+            <li class="oitem"><div class="odot"></div>Revisar propuesta de Prop&oacute;sito de Marca</li>
+            <li class="oitem"><div class="odot"></div>Alinear qui&eacute;n presenta qu&eacute;</li>
+          </ul>
+          <div class="sec-t" style="margin-top:16px">14:00&ndash;15:00 &middot; Reuni&oacute;n BDI</div>
+          <ul class="olist">
+            <li class="oitem"><div class="odot"></div>Presentar propuesta y documentar feedback</li>
+            <li class="oitem"><div class="odot"></div>Confirmar contactos y canal de comunicaci&oacute;n</li>
+          </ul>
+        </div>
+        <div>
+          <div class="sec-t">Decisiones a tomar</div>
+          <ul class="dlist">
+            <li class="ditem" data-k="d21"><div class="dcheck"></div><span class="dtext">&iquest;Qui&eacute;n es el contacto operativo de BDI?</span></li>
+            <li class="ditem" data-k="d22"><div class="dcheck"></div><span class="dtext">&iquest;Frecuencia de check-ins con BDI?</span></li>
+            <li class="ditem" data-k="d23"><div class="dcheck"></div><span class="dtext">&iquest;Canal oficial de comunicaci&oacute;n BDI?</span></li>
+          </ul>
+          <textarea class="notes" data-k="n2" placeholder="Feedback BDI &middot; acuerdos..."></textarea>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="block tc">
+    <div class="btrig" id="bt4">
+      <div class="btime">15:00<br>&#8595;<br>17:00</div><div class="bbar"></div>
+      <div class="bcont"><div class="bphase">Bloque 3 &middot; Construcci&oacute;n</div><div class="btitle">Sistemas &middot; Plantilla BDI &middot; Calendario &middot; Facturaci&oacute;n</div><div class="bsub">Herramientas operativas del contrato</div></div>
+      <div class="bright"><span class="btag">Construir</span><svg class="chev" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 4l4 4-4 4"/></svg></div>
+    </div>
+    <div class="bbody" id="bb4">
+      <div class="bgrid">
+        <div><div class="sec-t">Objetivos</div><ul class="olist">
+          <li class="oitem"><div class="odot"></div>Validar plantilla mensual BDI</li>
+          <li class="oitem"><div class="odot"></div>Calendario de entregables abril&ndash;marzo 2027</li>
+          <li class="oitem"><div class="odot"></div>Flujo de facturaci&oacute;n con responsables</li>
+        </ul></div>
+        <div><div class="sec-t">Decisiones a tomar</div><ul class="dlist">
+          <li class="ditem" data-k="d31"><div class="dcheck"></div><span class="dtext">&iquest;Qu&eacute; d&iacute;a del mes se env&iacute;a el invoice? (rec: 3&ndash;5)</span></li>
+          <li class="ditem" data-k="d32"><div class="dcheck"></div><span class="dtext">&iquest;Qui&eacute;n aprueba el reporte mensual?</span></li>
+          <li class="ditem" data-k="d33"><div class="dcheck"></div><span class="dtext">&iquest;C&oacute;mo se registra la evidencia de entrega?</span></li>
+          <li class="ditem" data-k="d34"><div class="dcheck"></div><span class="dtext">&iquest;Cadencia de reuniones internas BDI?</span></li>
+        </ul></div>
+      </div>
+      <div class="outbox" style="background:#d4e8d9;color:#0a2e15;border-color:#a0c8a8;margin-top:16px">
+        <div class="outlbl" style="color:#2e5e3a">Outputs</div>
+        <div class="outitem">&#128203; Plantilla mensual BDI validada</div>
+        <div class="outitem">&#128203; Calendario abril 2026&ndash;marzo 2027</div>
+      </div>
+      <textarea class="notes" data-k="n3" placeholder="Acuerdos operativos..."></textarea>
+    </div>
+  </div>
+
+  <div class="block tk">
+    <div class="btrig" id="bt5">
+      <div class="btime">17:00<br>&#8595;<br>18:00</div><div class="bbar"></div>
+      <div class="bcont"><div class="bphase">Bloque 4 &middot; Cierre</div><div class="btitle">Compromisos &middot; Pr&oacute;ximos pasos &middot; Modo de trabajo</div><div class="bsub">Cerrar el d&iacute;a con decisiones claras</div></div>
+      <div class="bright"><span class="btag">Cierre</span><svg class="chev" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 4l4 4-4 4"/></svg></div>
+    </div>
+    <div class="bbody" id="bb5">
+      <div class="bgrid">
+        <div><div class="sec-t">Objetivos</div><ul class="olist">
+          <li class="oitem"><div class="odot"></div>Recapitular decisiones del d&iacute;a</li>
+          <li class="oitem"><div class="odot"></div>Asignar pr&oacute;ximos pasos con nombre y fecha</li>
+          <li class="oitem"><div class="odot"></div>Confirmar modo de trabajo Kathe &#8596; Julio</li>
+        </ul></div>
+        <div><div class="sec-t">No pueden quedar abiertas</div><ul class="dlist">
+          <li class="ditem" data-k="d41"><div class="dcheck"></div><span class="dtext">Lista pre-lanzamiento 1 de abril con due&ntilde;os</span></li>
+          <li class="ditem" data-k="d42"><div class="dcheck"></div><span class="dtext">Pr&oacute;xima reuni&oacute;n directiva agendada</span></li>
+          <li class="ditem" data-k="d43"><div class="dcheck"></div><span class="dtext">Modo de trabajo Kathe &#8596; Julio acordado</span></li>
+          <li class="ditem" data-k="d44"><div class="dcheck"></div><span class="dtext">Estrategia de comunicaci&oacute;n BDI desde el d&iacute;a 1</span></li>
+        </ul></div>
+      </div>
+      <div class="outbox" style="background:#e0d8f0;color:#1a0e36;border-color:#b8a8e0">
+        <div class="outlbl" style="color:#4a3570">Output final</div>
+        <div class="outitem">&#9989; Plan BDI aprobado por Katherine y Julio</div>
+        <div class="outitem">&#9989; Modo de trabajo directivo 2026 definido</div>
+      </div>
+      <textarea class="notes" data-k="n4" placeholder="Compromisos y pr&oacute;ximos pasos..."></textarea>
+    </div>
+  </div>
+</div>
+
+<div class="estr">
+  <div class="estr-head">
+    <div><div class="estr-title">Estrategia Victoria Teams &middot; 2026</div><div style="font-size:12px;color:rgba(245,242,235,.5);margin-top:2px;font-family:'DM Mono',monospace">Por definir hoy</div></div>
+    <span class="estr-badge">Secci&oacute;n viva</span>
+  </div>
+  <div class="estr-grid">
+    <div class="estr-card"><div class="estr-n">01</div><div class="estr-t">Objetivo estrat&eacute;gico 1</div><textarea class="notes" data-k="e1" placeholder="&iquest;Cu&aacute;l es el primer objetivo para 2026?" style="background:rgba(255,255,255,.7)"></textarea><div class="estr-st" data-k="es1">Por definir</div></div>
+    <div class="estr-card"><div class="estr-n">02</div><div class="estr-t">Objetivo estrat&eacute;gico 2</div><textarea class="notes" data-k="e2" placeholder="&iquest;Cu&aacute;l es el segundo objetivo para 2026?" style="background:rgba(255,255,255,.7)"></textarea><div class="estr-st" data-k="es2">Por definir</div></div>
+    <div class="estr-card"><div class="estr-n">03</div><div class="estr-t">Objetivo estrat&eacute;gico 3</div><textarea class="notes" data-k="e3" placeholder="&iquest;Cu&aacute;l es el tercer objetivo para 2026?" style="background:rgba(255,255,255,.7)"></textarea><div class="estr-st" data-k="es3">Por definir</div></div>
+    <div class="estr-card"><div class="estr-n">04</div><div class="estr-t">Modelo de negocio y crecimiento</div><textarea class="notes" data-k="e4" placeholder="&iquest;C&oacute;mo crece Victoria Teams este a&ntilde;o?" style="background:rgba(255,255,255,.7)"></textarea><div class="estr-st" data-k="es4">Por definir</div></div>
+  </div>
+</div>
+
+<div class="modo">
+  <div class="modo-title">Modo de trabajo &middot; Katherine &#8596; Julio</div>
+  <div class="modo-sub">Acordar hoy c&oacute;mo operan los dos para que funcione el a&ntilde;o</div>
+  <div class="modo-grid">
+    <div class="modo-card"><div class="modo-icon">&#128197;</div><div class="modo-ct">Cadencia de reuniones</div><div class="modo-cb">&iquest;Con qu&eacute; frecuencia? &iquest;Qu&eacute; tipo?</div><input class="modo-in" data-k="m1" placeholder="Ej: Lunes 9am &middot; 1h semanal..."></div>
+    <div class="modo-card"><div class="modo-icon">&#128172;</div><div class="modo-ct">Canal de comunicaci&oacute;n</div><div class="modo-cb">&iquest;D&oacute;nde van los urgentes, estrat&eacute;gicos, operativos?</div><input class="modo-in" data-k="m2" placeholder="Ej: WhatsApp urgente &middot; Email estrat&eacute;gico..."></div>
+    <div class="modo-card"><div class="modo-icon">&#127919;</div><div class="modo-ct">Divisi&oacute;n de roles</div><div class="modo-cb">&iquest;Qui&eacute;n lidera qu&eacute;?</div><input class="modo-in" data-k="m3" placeholder="Ej: Kathe lidera cliente &middot; Julio operaci&oacute;n..."></div>
+    <div class="modo-card"><div class="modo-icon">&#128202;</div><div class="modo-ct">Reporte y accountability</div><div class="modo-cb">&iquest;C&oacute;mo se rinden cuentas?</div><input class="modo-in" data-k="m4" placeholder="Ej: Dashboard semanal en Notion..."></div>
+    <div class="modo-card"><div class="modo-icon">&#128680;</div><div class="modo-ct">Protocolo de decisiones</div><div class="modo-cb">&iquest;Qu&eacute; decide cada uno solo?</div><input class="modo-in" data-k="m5" placeholder="Ej: &gt;$5k requiere los dos..."></div>
+    <div class="modo-card"><div class="modo-icon">&#127807;</div><div class="modo-ct">Crecimiento conjunto</div><div class="modo-cb">&iquest;Qu&eacute; construyen juntos este a&ntilde;o?</div><input class="modo-in" data-k="m6" placeholder="Ej: Nuevo servicio &middot; expansi&oacute;n..."></div>
+  </div>
+</div>
+
+<div class="acta-wrap">
+  <button class="acta-btn" id="acta-btn">
+    Generar Acta del Workshop
+    <span class="acta-hint">Compila decisiones + notas en un texto listo para compartir</span>
+  </button>
+</div>
+
+<footer class="footer">
+  <div class="footer-brand">Victoria Teams</div>
+  <div class="footer-note">Workshop Estrat&eacute;gico &middot; Marzo 2026 &middot; Confidencial</div>
+</footer>
+
+<script>
+var SK='vt-ws-mar26';
+
+// Toggle bloques
+['bt0','bt1','bt2','bt3','bt4','bt5'].forEach(function(id,i){
+  var btn=document.getElementById(id);
+  var body=document.getElementById('bb'+i);
+  btn.addEventListener('click',function(){
+    var chev=btn.querySelector('.chev');
+    body.classList.toggle('open');
+    chev.classList.toggle('open');
+  });
+});
+
+// Toggle decisions
+document.querySelectorAll('.ditem').forEach(function(item){
+  item.addEventListener('click',function(){
+    item.querySelector('.dcheck').classList.toggle('done');
+    item.querySelector('.dtext').classList.toggle('done');
+    upd();save();
+  });
+});
+
+// Toggle estrategia status
+document.querySelectorAll('.estr-st').forEach(function(el){
+  el.addEventListener('click',function(){
+    if(el.classList.contains('def')){el.classList.remove('def');el.textContent='Por definir';}
+    else if(el.classList.contains('proc')){el.classList.remove('proc');el.classList.add('def');el.textContent='Definido';}
+    else{el.classList.add('proc');el.textContent='En proceso';}
+    save();
+  });
+});
+
+// Progress
+function upd(){
+  var all=document.querySelectorAll('.ditem').length;
+  var done=document.querySelectorAll('.dcheck.done').length;
+  var pct=Math.round((done/all)*100);
+  document.getElementById('pfill').style.width=pct+'%';
+  document.getElementById('ppct').textContent=pct+'%';
+  document.getElementById('kdec').textContent=done;
+}
+
+// LocalStorage
+function save(){
+  var s={};
+  document.querySelectorAll('[data-k]').forEach(function(el){
+    var k=el.dataset.k;
+    if(el.classList.contains('ditem')) s[k]=el.querySelector('.dcheck').classList.contains('done');
+    else if(el.tagName==='TEXTAREA') s[k]=el.value;
+    else if(el.tagName==='INPUT') s[k]=el.value;
+    else if(el.classList.contains('estr-st')) s[k]=el.className+'|'+el.textContent;
+  });
+  localStorage.setItem(SK,JSON.stringify(s));
+}
+function load(){
+  var raw=localStorage.getItem(SK);
+  if(!raw) return;
+  var s=JSON.parse(raw);
+  document.querySelectorAll('[data-k]').forEach(function(el){
+    var k=el.dataset.k;
+    if(!(k in s)) return;
+    if(el.classList.contains('ditem')){
+      if(s[k]){el.querySelector('.dcheck').classList.add('done');el.querySelector('.dtext').classList.add('done');}
+    } else if(el.tagName==='TEXTAREA') el.value=s[k];
+    else if(el.tagName==='INPUT') el.value=s[k];
+    else if(el.classList.contains('estr-st')){var p=s[k].split('|');el.className=p[0];el.textContent=p[1];}
+  });
+}
+document.addEventListener('input',save);
+document.addEventListener('change',save);
+
+// Acta
+function gv(k){var el=document.querySelector('[data-k="'+k+'"]');return el?el.value.trim():'';}
+function gd(k){var el=document.querySelector('[data-k="'+k+'"]');return el?el.querySelector('.dcheck').classList.contains('done'):false;}
+function gt(k){var el=document.querySelector('[data-k="'+k+'"]');return el?el.textContent:'';}
+
+document.getElementById('acta-btn').addEventListener('click',function(){
+  var now=new Date();
+  var f=now.toLocaleDateString('es-CO',{weekday:'long',year:'numeric',month:'long',day:'numeric'});
+  var h=now.toLocaleTimeString('es-CO',{hour:'2-digit',minute:'2-digit'});
+  var R='--------------------------------------------------';
+  var a='ACTA - WORKSHOP DIRECTIVO VICTORIA TEAMS\n';
+  a+='Planeacion Estrategica 2026\n'+f+' - '+h+'\nKAPITAL, Bogota\nKatherine Silva - Julio Ortiz\n'+R+'\n';
+  var bs=[
+    {t:'BLOQUE 1 - DIAGNOSTICO',ds:[['d11','Responsable tracking BDI'],['d12','Herramienta seguimiento'],['d13','Evidencia invoice'],['d14','3 objetivos VT 2026']]},
+    {t:'BLOQUE 2 - BDI',ds:[['d21','Contacto BDI'],['d22','Frecuencia check-ins'],['d23','Canal comunicacion']]},
+    {t:'BLOQUE 3 - CONSTRUCCION',ds:[['d31','Dia invoice'],['d32','Aprueba reporte'],['d33','Evidencia entrega'],['d34','Cadencia reuniones']]},
+    {t:'BLOQUE 4 - CIERRE',ds:[['d41','Lista pre-lanzamiento'],['d42','Reunion agendada'],['d43','Modo trabajo'],['d44','Comunicacion BDI']]}
+  ];
+  a+='\nDECISIONES\n'+R+'\n';
+  var tot=0,don=0;
+  bs.forEach(function(b){
+    a+='\n'+b.t+'\n';
+    b.ds.forEach(function(d){var ok=gd(d[0]);a+='  '+(ok?'SI':'NO')+' - '+d[1]+'\n';tot++;if(ok)don++;});
+  });
+  a+='\nTotal: '+don+'/'+tot+'\n';
+  a+='\n'+R+'\nNOTAS\n'+R+'\n';
+  [['n0','Apertura'],['n1','Diagnostico'],['n2','BDI'],['n3','Construccion'],['n4','Cierre']].forEach(function(n){var v=gv(n[0]);if(v)a+='\n'+n[1]+':\n'+v+'\n';});
+  a+='\n'+R+'\nESTRATEGIA 2026\n'+R+'\n';
+  [['e1','es1','Obj 1'],['e2','es2','Obj 2'],['e3','es3','Obj 3'],['e4','es4','Crecimiento']].forEach(function(e){a+='\n'+e[2]+' ['+gt(e[1])+']:\n'+(gv(e[0])||'(no definido)')+'\n';});
+  a+='\n'+R+'\nMODO DE TRABAJO\n'+R+'\n';
+  [['m1','Cadencia'],['m2','Comunicacion'],['m3','Roles'],['m4','Accountability'],['m5','Decisiones'],['m6','Crecimiento']].forEach(function(m){a+='\n'+m[1]+':\n'+(gv(m[0])||'(por definir)')+'\n';});
+  a+='\n'+R+'\n'+f+' - '+h+' - Victoria Teams';
+  document.getElementById('atxt').textContent=a;
+  document.getElementById('modal').classList.add('show');
+});
+
+document.getElementById('mx').addEventListener('click',function(){document.getElementById('modal').classList.remove('show');});
+document.getElementById('mx2').addEventListener('click',function(){document.getElementById('modal').classList.remove('show');});
+document.getElementById('cbtn').addEventListener('click',function(){
+  navigator.clipboard.writeText(document.getElementById('atxt').textContent).then(function(){
+    var b=document.getElementById('cbtn');b.textContent='Copiado!';b.classList.add('ok');
+    setTimeout(function(){b.textContent='Copiar acta';b.classList.remove('ok');},2500);
+  });
+});
+document.addEventListener('keydown',function(e){if(e.key==='Escape')document.getElementById('modal').classList.remove('show');});
+
+// Init
+load();upd();
+document.getElementById('bt0').click();
+</script>
+</body>
+</html>
+3);margin-top:12px;font-weight:300;line-height:1.6}
 .meta-date{font-family:'Playfair Display',serif;font-size:20px;font-weight:700;text-align:right}
 .meta-loc{font-size:12px;color:var(--ink-3);margin-top:4px;font-family:'DM Mono',monospace;text-align:right}
 .chips{display:flex;gap:6px;justify-content:flex-end;margin-top:12px}
